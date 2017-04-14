@@ -53,7 +53,7 @@ public class CurrencyPickerActivity extends ListActivity {
                 names[i] = lookup.getString(key);
             }
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, names);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_checked, names);
             setListAdapter(adapter);
             getListView().setItemChecked(selectedIndex, true);
 
