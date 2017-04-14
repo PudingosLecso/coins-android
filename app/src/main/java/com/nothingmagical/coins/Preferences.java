@@ -13,6 +13,8 @@ public class Preferences {
     public static final String KEY_CURRENCY = "Currency";
     public static final String KEY_UPDATED_AT = "UpdatedAt";
 
+    private Preferences(){}
+
     public static String getCurrencyCode(Context context) {
         SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
         return preferences.getString(KEY_CURRENCY, "USD");
@@ -50,6 +52,4 @@ public class Preferences {
         SharedPreferences preferences = context.getSharedPreferences(CONVERSION_PREFERENCES_NAME, Context.MODE_PRIVATE);
         return preferences.getLong(KEY_UPDATED_AT, 0);
     }
-
-    private Preferences(){}
 }
