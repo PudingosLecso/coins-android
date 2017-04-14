@@ -197,8 +197,7 @@ public class MainActivity extends Activity {
                 editor.commit();
             }
             catch (Exception e) {
-                e.printStackTrace();
-                Log.e(TAG, e.getClass().getSimpleName() + " - " + e.getMessage());
+                Log.e(TAG, "context", e);
             }
 
             return null;
@@ -237,9 +236,9 @@ public class MainActivity extends Activity {
                 }
 
             } catch (MalformedURLException e) {
-                Log.e(TAG, e.getMessage());
+                Log.e(TAG, "Marformed URL", e);
             } catch (IOException e) {
-                Log.e(TAG, e.getMessage());
+                Log.e(TAG, "IO exception", e);
             }
             return null;
         }

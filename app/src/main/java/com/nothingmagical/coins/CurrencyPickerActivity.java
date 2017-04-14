@@ -58,7 +58,7 @@ public class CurrencyPickerActivity extends ListActivity {
             getListView().setItemChecked(selectedIndex, true);
 
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
+            Log.e(TAG, "An error occured", e);
         }
     }
 
@@ -77,7 +77,7 @@ public class CurrencyPickerActivity extends ListActivity {
             String code = order.getString(position);
             Preferences.setCurrencyCode(this, code);
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
+            Log.e(TAG, "An error occured", e);
         }
 
         finish();
