@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
  * Created by soffes on 4/9/14.
  */
 public class Preferences {
-
     public static final String PREFERENCES_NAME = "Preferences";
     public static final String CONVERSION_PREFERENCES_NAME = "ConversionPreferences";
     public static final String KEY_BTC = "BTC";
@@ -51,4 +50,6 @@ public class Preferences {
         SharedPreferences preferences = context.getSharedPreferences(CONVERSION_PREFERENCES_NAME, Context.MODE_PRIVATE);
         return preferences.getLong(KEY_UPDATED_AT, 0);
     }
+
+    private Preferences(){}
 }
