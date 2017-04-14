@@ -222,9 +222,7 @@ public class MainActivity extends Activity {
                 c.connect();
                 int status = c.getResponseCode();
 
-                switch (status) {
-                    case 200:
-                    case 201:
+                if (status == 200 || status == 201) {
                         BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream()));
                         StringBuilder sb = new StringBuilder();
                         String line;
