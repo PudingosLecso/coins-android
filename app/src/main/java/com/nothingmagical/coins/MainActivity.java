@@ -204,7 +204,7 @@ public class MainActivity extends Activity {
         }
 
         @Override
-        protected void onPostExecute(Object _) {
+        protected void onPostExecute(Object result) {
             mUpdating = false;
             updateInterface();
         }
