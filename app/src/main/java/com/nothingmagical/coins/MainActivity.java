@@ -197,7 +197,7 @@ public class MainActivity extends Activity {
                 editor.commit();
             }
             catch (Exception e) {
-                Log.e(TAG, "context", e);
+                Log.e(TAG, "An error occured", e);
             }
 
             return null;
@@ -236,7 +236,7 @@ public class MainActivity extends Activity {
                 }
 
             } catch (MalformedURLException e) {
-                Log.e(TAG, "Marformed URL", e);
+                Log.e(TAG, "Malformed URL", e);
             } catch (IOException e) {
                 Log.e(TAG, "IO exception", e);
             }
