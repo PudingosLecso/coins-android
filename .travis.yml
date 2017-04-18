@@ -12,7 +12,7 @@ android:
     # Additional components
     # - extra-google-google_play_services
     # - extra-google-m2repository # Google Play Services
-    # - extra-android-m2repository # Design Support Library
+    - extra-android-m2repository # Gradle 2.3.1
     # - addon-google_apis-google-19
 before_install:
  - chmod +x gradlew # Fixes "./gradlew: Permission denied"
