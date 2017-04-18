@@ -58,7 +58,7 @@ public class CurrencyPickerActivity extends ListActivity {
             getListView().setItemChecked(selectedIndex, true);
 
         } catch (Exception e) {
-            Log.e(TAG, "An error occured", e);
+            Log.e(TAG, "Error while loading currencies", e);
         }
     }
 
