@@ -10,10 +10,10 @@ android:
     - sys-img-armeabi-v7a-android-19
 
     # Additional components
-    # - extra-google-google_play_services
-    - extra-google-m2repository # Gradle 2.3.1
+    - extra-google-google_play_services
+    - extra-google-m2repository
     - extra-android-m2repository
-    # - addon-google_apis-google-19
+    - addon-google_apis-google-19
 before_install:
  - chmod +x gradlew # Fixes "./gradlew: Permission denied"
 notifications:
