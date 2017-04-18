@@ -53,12 +53,12 @@ public class CurrencyPickerActivity extends ListActivity {
                 names[i] = lookup.getString(key);
             }
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, names);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_checked, names);
             setListAdapter(adapter);
             getListView().setItemChecked(selectedIndex, true);
 
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
+            Log.e(TAG, "Error while loading currencies", e);
         }
     }
 
@@ -77,7 +77,7 @@ public class CurrencyPickerActivity extends ListActivity {
             String code = order.getString(position);
             Preferences.setCurrencyCode(this, code);
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
+            Log.e(TAG, "Error while setting currency", e);
         }
 
         finish();
