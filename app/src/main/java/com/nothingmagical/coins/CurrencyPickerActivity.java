@@ -77,7 +77,7 @@ public class CurrencyPickerActivity extends ListActivity {
             String code = order.getString(position);
             Preferences.setCurrencyCode(this, code);
         } catch (Exception e) {
-            Log.e(TAG, "An error occured", e);
+            Log.e(TAG, "Error while setting currency", e);
         }
 
         finish();

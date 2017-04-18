@@ -197,7 +197,7 @@ public class MainActivity extends Activity {
                 editor.commit();
             }
             catch (Exception e) {
-                Log.e(TAG, "An error occured", e);
+                Log.e(TAG, "Error while downloading and processing exchange rates", e);
             }
 
             return null;
