@@ -14,5 +14,7 @@ android:
     # - extra-google-m2repository # Google Play Services
     # - extra-android-m2repository # Design Support Library
     # - addon-google_apis-google-19
+before_install:
+ - chmod +x gradlew # Fixes "./gradlew: Permission denied"
 notifications:
   slack: iethfgroup:b4VDqxMEG6P243YziEaGda52
