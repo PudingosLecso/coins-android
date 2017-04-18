@@ -1,4 +1,5 @@
 language: android
+jdk: oraclejdk8
 android:
   components:
     # The BuildTools version used by the project
@@ -13,3 +14,5 @@ android:
     # - extra-google-m2repository # Google Play Services
     # - extra-android-m2repository # Design Support Library
     # - addon-google_apis-google-19
+notifications:
+  slack: iethfgroup:b4VDqxMEG6P243YziEaGda52
