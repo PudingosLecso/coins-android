@@ -1,5 +1,9 @@
 language: android
 jdk: oraclejdk8
+addons:
+  apt:
+    packages:
+      - lynx
 android:
   components:
     - tools # to get the new "repository-11.xml"
@@ -16,6 +20,8 @@ android:
     - addon-google_apis-google-19
 before_install:
  - chmod +x gradlew # Fixes "./gradlew: Permission denied"
+after_failure:
+  - if [ -f /home/travis/build/PudingosLecso/coins-android/app/build/reports/lint-results.html ]; then lynx -dump /home/travis/build/PudingosLecso/coins-android/app/build/reports/lint-results.html; fi
 notifications:
   slack: iethfgroup:b4VDqxMEG6P243YziEaGda52
 script:
