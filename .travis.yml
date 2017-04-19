@@ -18,3 +18,5 @@ before_install:
  - chmod +x gradlew # Fixes "./gradlew: Permission denied"
 notifications:
   slack: iethfgroup:b4VDqxMEG6P243YziEaGda52
+script:
+   - ./gradlew build connectedCheck --stacktrace
