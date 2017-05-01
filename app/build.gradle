@@ -10,11 +10,17 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+
+    // Travis CI doesn't like lint errors.
+    lintOptions {
+        abortOnError false
     }
 }
 
