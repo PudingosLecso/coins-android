@@ -1,0 +1,28 @@
+language: android
+jdk: oraclejdk8
+addons:
+  apt:
+    packages:
+      - lynx
+android:
+  components:
+    - tools # to get the new "repository-11.xml"
+    - tools # see https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943
+    - platform-tools
+    - build-tools-25.0.2 # The BuildTools version used by the project
+    - android-19 # The SDK version used to compile
+    - sys-img-armeabi-v7a-android-19
+
+    # Additional components
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository # design support library
+    - addon-google_apis-google-19
+before_install:
+ - chmod +x gradlew # Fixes "./gradlew: Permission denied"
+after_failure:
+  - if [ -f /home/travis/build/PudingosLecso/coins-android/app/build/reports/lint-results.html ]; then lynx -dump /home/travis/build/PudingosLecso/coins-android/app/build/reports/lint-results.html; fi
+notifications:
+  slack: iethfgroup:b4VDqxMEG6P243YziEaGda52
+script:
+   - ./gradlew build connectedCheck --stacktrace
