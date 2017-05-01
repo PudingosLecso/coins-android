@@ -197,15 +197,14 @@ public class MainActivity extends Activity {
                 editor.commit();
             }
             catch (Exception e) {
-                e.printStackTrace();
-                Log.e(TAG, e.getClass().getSimpleName() + " - " + e.getMessage());
+                Log.e(TAG, "Error while downloading and processing exchange rates", e);
             }
 
             return null;
         }
 
         @Override
-        protected void onPostExecute(Object _) {
+        protected void onPostExecute(Object result) {
             mUpdating = false;
             updateInterface();
         }
@@ -223,9 +222,7 @@ public class MainActivity extends Activity {
                 c.connect();
                 int status = c.getResponseCode();
 
-                switch (status) {
-                    case 200:
-                    case 201:
+                if (status == 200 || status == 201) {
                         BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream()));
                         StringBuilder sb = new StringBuilder();
                         String line;
@@ -237,9 +234,9 @@ public class MainActivity extends Activity {
                 }
 
             } catch (MalformedURLException e) {
-                Log.e(TAG, e.getMessage());
+                Log.e(TAG, "Malformed URL", e);
             } catch (IOException e) {
-                Log.e(TAG, e.getMessage());
+                Log.e(TAG, "IO exception", e);
             }
             return null;
         }

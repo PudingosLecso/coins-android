@@ -7,12 +7,13 @@ import android.content.SharedPreferences;
  * Created by soffes on 4/9/14.
  */
 public class Preferences {
-
     public static final String PREFERENCES_NAME = "Preferences";
     public static final String CONVERSION_PREFERENCES_NAME = "ConversionPreferences";
     public static final String KEY_BTC = "BTC";
     public static final String KEY_CURRENCY = "Currency";
     public static final String KEY_UPDATED_AT = "UpdatedAt";
+
+    private Preferences(){}
 
     public static String getCurrencyCode(Context context) {
         SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
