@@ -31,4 +31,12 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.12'
+    // required if you want to use Mockito for unit tests
+    testCompile 'org.mockito:mockito-core:2.7.22'
+    // required if you want to use Mockito for Android tests
+    androidTestCompile 'org.mockito:mockito-android:2.7.22'
+    compile 'org.mockito:mockito-core:2.7.22'
+    compile 'org.mockito:mockito-core:2.7.22'
 }
